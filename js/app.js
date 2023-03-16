@@ -1,7 +1,13 @@
-
+var url = window.location.href;
+var swLocation = '/tw/sw.js'; //el nombre de la carpeta del url
 
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+   
+   if( url.includes(' localhost')){
+    swLocation = '/sw.js';
+   }
+   
+    navigator.serviceWorker.register( swLocation);
 }
 // Referencias de jQuery
 
